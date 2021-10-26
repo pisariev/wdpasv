@@ -30,7 +30,7 @@ describe('Auth', () => {
     it('password required validation', async () => {
         await LoginPage.inputPassword.setValue('invalid');
         await LoginPage.inputPassword.smartClear();
-        await expect(LoginPage.passwoValidation).toHaveTextContaining('Required');
+        await expect(LoginPage.passwordValidation).toHaveTextContaining('Required');
     });
 });
 
