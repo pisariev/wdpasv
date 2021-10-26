@@ -1,4 +1,5 @@
 const { addCommands } = require('./helpers/setup.helper');
+const allureReporter = require('@wdio/allure-reporter');
 
 exports.config = {
     specs: [
@@ -19,8 +20,12 @@ exports.config = {
     connectionRetryCount: 1,
 
     services: ['devtools'],
+
     framework: 'mocha',
-    reporters: ['spec'],
+
+    reporters: ['spec', ['allure', {
+        disableWebdriverStepsReporting: true
+    }]],
 
     mochaOpts: {
         ui: 'bdd',
@@ -29,5 +34,12 @@ exports.config = {
 
     before: async function (capabilities, specs, browser) {
         await addCommands();
+    },
+
+    afterTest: async function (test, context, result) {
+        if (test.failed || result.error) {
+           await browser.takeScreenshot();
+           allureReporter.addAttachment('URL', await browser.getUrl(), 'text/plain');
+        }
     }
 }
