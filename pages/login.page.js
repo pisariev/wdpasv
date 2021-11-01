@@ -14,7 +14,7 @@ class LoginPage extends Page {
         await this.buttonLogin.click();
     }
 
-    open () {
+    open() {
         return super.open('/user/login');
     }
 }
