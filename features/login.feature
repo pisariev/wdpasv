@@ -47,5 +47,5 @@ Feature: Auth
     Then password required error appears
 
     Examples:
-      | password  |
+      | password |
       | 31101967 |

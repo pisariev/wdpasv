@@ -45,3 +45,4 @@ Then(/^email required error appears$/, async () => {
 Then(/^password required error appears$/, async () => {
     await expect(LoginPage.passwordValidation).toHaveTextContaining('Required');
 });
+

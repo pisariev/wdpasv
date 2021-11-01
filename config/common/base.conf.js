@@ -16,7 +16,7 @@ exports.config = {
     framework: 'cucumber',
 
     reporters: ['spec', ['allure', {
-        disableWebdriverStepsReporting: true
+        useCucumberStepsReporter: true
     }]],
 
     cucumberOpts: {
