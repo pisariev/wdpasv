@@ -3,6 +3,9 @@ import CoursesPage from '../pages/app/courses.page';
 import CardsPage from '../pages/app/cards.page';
 import DiaryPage from '../pages/app/diary.page';
 import ChallengesPage from '../pages/app/challenges.page';
+import ChatPage from '../pages/app/chat.page';
+import GoalsPage from '../pages/app/goals.page';
+import GroupsPage from '../pages/app/groups.page'
 
 describe('Navigation', function() {
     before(async function() {
@@ -32,5 +35,23 @@ describe('Navigation', function() {
         await ProfilePage.challengesLink.click();
         expect(browser).toHaveUrlContaining('/challenge');
         await expect(ChallengesPage.headerItem).toBeDisplayed();
+    });
+
+    it('Chat module opens', async function() {
+        await ProfilePage.chatLink.click();
+        expect(browser).toHaveUrlContaining('/chat');
+        await expect(ChatPage.headerItem).toBeDisplayed();
+    });
+
+    it('Goals module opens', async function() {
+        await ProfilePage.GoalsLink.click();
+        expect(browser).toHaveUrlContaining('/goal');
+        await expect(GoalsPage.headerItem).toBeDisplayed();
+    });
+
+    it('Groups module opens', async function() {
+        await ProfilePage.groupsLink.click();
+        expect(browser).toHaveUrlContaining('/group');
+        await expect(GroupsPage.headerItem).toBeDisplayed();
     });
 });

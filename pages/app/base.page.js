@@ -5,4 +5,8 @@ export default class BasePage extends Page {
     get cardsLink() { return $('div[data-qa="topmenu-Cards"]') }
     get diaryLink() { return $('div[data-qa="topmenu-Diary"]') }
     get challengesLink() { return $('div[data-qa="topmenu-Challenges"]') }
+    get groupsLink() { return $('div[data-qa="topmenu-Groups"]') }
+    get chatLink() { return $('div[data-qa="topmenu-Chat"]') }
+    get GoalsLink() { return $('div[data-qa="topmenu-Goals"]') }
+
 }
