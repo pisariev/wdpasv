@@ -5,8 +5,8 @@ class LoginPage extends Page {
     get inputPassword () { return $('#normal_login_password') }
     get buttonLogin () { return $('.login-form-button') }
     get notification() { return $('.ant-notification-notice-message')}
-    get emailValidation() { return $('#normal_login .ant-form-item-has-error:nth-child(2) [role=\'alert\']')}
-    get passwordValidation() { return $('#normal_login .ant-form-item-has-error:nth-child(3) [role=\'alert\']')}
+    get emailValidation() { return $('//div[contains(@class, "ant-form-item-with-help")][div//input[@id="normal_login_email"]]//div[@role="alert"]') }
+    get passwordValidation() { return $('//div[contains(@class, "ant-form-item-with-help")][div//input[@id="normal_login_password"]]//div[@role="alert"]') }
 
     async login (email, password) {
         await this.inputEmail.setValue(email);

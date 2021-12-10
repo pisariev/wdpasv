@@ -4,7 +4,6 @@ Feature: Auth
     Given login page is open
 
   Scenario Outline: As a user, I can log into the secure area
-
     When I log in with <username> and <password>
     Then I should be redirected to my profile page
 
@@ -13,7 +12,6 @@ Feature: Auth
       | ipisaryev@gmail.com | 31101967 |
 
   Scenario Outline: As a user, I'm unable to login with invalid credentials
-
     When I log in with <username> and <password>
     Then I should see notification about failed auth
 
@@ -22,7 +20,6 @@ Feature: Auth
       | invalid@example.com | invalid  |
 
   Scenario Outline: As a user, I must see validation error if email has invalid format
-
     When I set email <username>
     Then email validation error appears
 
@@ -31,7 +28,6 @@ Feature: Auth
       | invalid  |
 
   Scenario Outline: As a user, I must see an error if email field was cleared
-
     When I set email <username>
     When I clear email input field
     Then email required error appears
@@ -41,11 +37,10 @@ Feature: Auth
       | email@example.com |
 
   Scenario Outline: As a user, I must see an error if password field was cleared
-
     When I set password <password>
     When I clear password input field
     Then password required error appears
 
     Examples:
-      | password |
-      | 31101967 |
+      | password   |
+      | 131101967  |

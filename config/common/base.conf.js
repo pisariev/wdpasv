@@ -16,7 +16,7 @@ exports.config = {
     framework: 'cucumber',
 
     reporters: ['spec', ['allure', {
-        useCucumberStepsReporter: true
+        useCucumberStepReporter: true
     }]],
 
     cucumberOpts: {
